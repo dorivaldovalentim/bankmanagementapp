@@ -1,77 +1,78 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <section class="login-content">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="logo">
+            <h1>BankManagement</h1>
         </div>
-    </div>
-</div>
+
+        <div class="login-box">
+
+            <form action="{{ route('register') }}" method="POST" class="login-form">
+                @csrf
+
+                <h3 class="login-head">
+                    <i class="fa fa-lg fa-fw fa-user"></i>
+                    Cadastrar conta
+                </h3>
+                
+                <div class="form-group">
+                    
+                    <input type="text" name="name" placeholder="Nome" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" />
+                   
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                
+                <div class="form-group">
+                    
+                    <input type="email" name="email" placeholder="E-mail" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" />
+                   
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+
+                    <input type="password" name="password" placeholder="Senha" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror" />
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" class="form-control" />
+                </div>
+                
+                <div class="form-group btn-container">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fa fa-sign-in fa-lg fa-fw"></i>
+                        Entrar
+                    </button>
+
+                    <p class="semibold-text mb-2 text-center">
+                        Já tem uma conta ? 
+                        <a href="{{ route('login') }}">
+                            Inicie sessão
+                        </a>
+                    </p>
+                </div>
+
+            </form>
+            
+        </div>
+
+    </section>
+
 @endsection

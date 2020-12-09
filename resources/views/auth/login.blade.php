@@ -64,7 +64,7 @@
                         Entrar
                     </button>
 
-                    <p class="semibold-text mb-2">
+                    <p class="semibold-text mb-2 text-center">
                         Ainda não tem uma conta ? 
                         <a href="{{ route('register') }}">
                             Cadastre-se já

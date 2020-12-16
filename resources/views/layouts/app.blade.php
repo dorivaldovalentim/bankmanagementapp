@@ -15,7 +15,7 @@
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome/css/all.min.css') }}">
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -27,7 +27,9 @@
         <header class="app-header">
             <a href="{{ route('home') }}" class="app-header__logo">BankManagement</a>
             <!-- Sidebar toggle button-->
-            <a href="#" class="app-sidebar__toggle" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+            <a href="#" class="app-sidebar__toggle text-center" data-toggle="sidebar" aria-label="Hide Sidebar">
+                <i class="fa fa-bars"></i>
+            </a>
             <!-- Navbar Right Menu-->
             <ul class="app-nav">
                 <li class="app-search">

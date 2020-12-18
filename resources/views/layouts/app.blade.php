@@ -23,71 +23,76 @@
     </head>
 
     <body class="app sidebar-mini">
-        <!-- Navbar-->
-        <header class="app-header">
-            <a href="{{ route('home') }}" class="app-header__logo">BankManagement</a>
-            <!-- Sidebar toggle button-->
-            <a href="#" class="app-sidebar__toggle text-center" data-toggle="sidebar" aria-label="Hide Sidebar">
-                <i class="fa fa-bars"></i>
-            </a>
-            <!-- Navbar Right Menu-->
-            <ul class="app-nav">
-                <li class="app-search">
-                    <input class="app-search__input" type="search" placeholder="Search">
-                    <button class="app-search__button"><i class="fa fa-search"></i></button>
-                </li>
 
-                <!-- User Menu-->
-                <li class="dropdown">
-                    <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
-                        <i class="fa fa-user fa-lg"></i>
-                    </a>
+        <div id="app">
 
-                    <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <i class="fa fa-user fa-lg"></i>
-                                Perfil
-                            </a>
-                        </li>
+            <!-- Navbar-->
+            <header class="app-header">
+                <a href="{{ route('home') }}" class="app-header__logo">BankManagement</a>
+                <!-- Sidebar toggle button-->
+                <a href="#" class="app-sidebar__toggle text-center" data-toggle="sidebar" aria-label="Hide Sidebar">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-- Navbar Right Menu-->
+                <ul class="app-nav">
+                    <li class="app-search">
+                        <input class="app-search__input" type="search" placeholder="Search">
+                        <button class="app-search__button"><i class="fa fa-search"></i></button>
+                    </li>
 
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <i class="fa fa-sign-out fa-lg"></i>
-                                Sair
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </header>
-        <!-- Sidebar menu -->
-        
-        <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
+                            <i class="fa fa-user fa-lg"></i>
+                        </a>
 
-        <aside class="app-sidebar">
-            <div class="app-sidebar__user">
-                <div>
-                    <p class="app-sidebar__user-name">{{ auth()->user()->name }}</p>
-                    <p class="app-sidebar__user-designation">Junior Fullstack Developer</p>
-                </div>
-            </div>
+                        <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-user fa-lg"></i>
+                                    Perfil
+                                </a>
+                            </li>
 
-            <ul class="app-menu">
-                <li>
-                    <a class="app-menu__item active" href="{{ route('home') }}">
-                        <i class="app-menu__icon fa fa-dashboard"></i>
-                        <span class="app-menu__label">Página Inicial</span>
-                    </a>
-                </li>
-            </ul>
-        </aside>
-
-        <main class="app-content">
-
-            @yield('content')
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-sign-out fa-lg"></i>
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </header>
+            <!-- Sidebar menu -->
             
-        </main>
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+
+            <aside class="app-sidebar">
+                <div class="app-sidebar__user">
+                    <div>
+                        <p class="app-sidebar__user-name">{{ auth()->user()->name }}</p>
+                        <p class="app-sidebar__user-designation">Junior Fullstack Developer</p>
+                    </div>
+                </div>
+
+                <ul class="app-menu">
+                    <li>
+                        <a class="app-menu__item active" href="{{ route('home') }}">
+                            <i class="app-menu__icon fa fa-home"></i>
+                            <span class="app-menu__label">Página Inicial</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="app-content">
+
+                @yield('content')
+                
+            </main>
+
+        </div>
         
         <!-- Essential javascripts for application to work -->
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>

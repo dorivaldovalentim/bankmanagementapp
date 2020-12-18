@@ -4,7 +4,7 @@
 
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-dashboard"></i> Página inicial</h1>
+            <h1><i class="fa fa-home"></i> Página inicial</h1>
             <p>A sua página inicial</p>
         </div>
 
@@ -28,7 +28,7 @@
 
         <div class="col-md-6 col-lg-3">
             <div class="widget-small info coloured-icon">
-                <i class="icon fa fa-thumbs-o-up fa-3x"></i>
+                <i class="icon fa fa-money-bill-wave fa-3x"></i>
 
                 <div class="info">
                     <h4>Movimentos</h4>
@@ -38,7 +38,9 @@
         </div>
 
         <div class="col-md-6 col-lg-3">
-            <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
+            <div class="widget-small warning coloured-icon">
+                <i class="icon fa fa-file fa-3x"></i>
+
                 <div class="info">
                     <h4>Dívidas (a pagar)</h4>
                     <p><b>10</b></p>

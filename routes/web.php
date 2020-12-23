@@ -24,5 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'cards'], function () {
         Route::get('/', "CardController@index")->name('cards.list');
+        Route::get('/create', "CardController@create")->name('card.create');
+        Route::post('/store', "CardController@store")->name('card.store');
     });
 });

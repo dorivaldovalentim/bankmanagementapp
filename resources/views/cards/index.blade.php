@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-md-12 mb-3">
-            <a href="#" class="btn btn-success">
+            <a href="{{ route('card.create') }}" class="btn btn-success">
                 <i class="fas fa-plus"></i>
             </a>
         </div>

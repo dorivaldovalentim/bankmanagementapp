@@ -14,7 +14,8 @@ class CardController extends Controller
      */
     public function index()
     {
-        //
+        $cards = auth()->user()->cards()->get();
+        return view('cards.index', compact('cards'));
     }
 
     /**

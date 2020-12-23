@@ -78,9 +78,16 @@
 
                 <ul class="app-menu">
                     <li>
-                        <a class="app-menu__item active" href="{{ route('home') }}">
+                        <a class="app-menu__item" href="{{ route('home') }}">
                             <i class="app-menu__icon fa fa-home"></i>
                             <span class="app-menu__label">Página Inicial</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a class="app-menu__item" href="{{ route('cards.list') }}">
+                            <i class="app-menu__icon fa fa-ad"></i>
+                            <span class="app-menu__label">Cartões</span>
                         </a>
                     </li>
                 </ul>

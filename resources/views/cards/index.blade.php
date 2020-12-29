@@ -28,7 +28,7 @@
 
         @forelse ($cards as $card)
 
-            <a href="#" class="col-md-4 text-white">
+            <a href="{{ route('card.show', $card->id) }}" class="col-md-4 text-white">
 
                 <div class="card" style="background: {{ $card->bank->color }}">
                     

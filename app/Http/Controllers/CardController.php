@@ -70,9 +70,10 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function show(Card $card)
+    public function show($id)
     {
-        //
+        $card = Card::findOrFail($id);
+        return view('cards.show', compact('card'));
     }
 
     /**

@@ -19,7 +19,10 @@ class CreateCardsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('bank_id');
             $table->foreign('bank_id')->references('id')->on('banks');
-            $table->double('amount');
+            $table->double('amount')->nullable();
+            $table->double('expenses')->nullable();
+            $table->double('savings')->nullable();
+            $table->double('forme')->nullable();
             $table->string('number');
             $table->string('iban');
             $table->date('expires_at');

@@ -26,6 +26,10 @@
             <a href="{{ route('cards.list') }}" class="btn btn-danger">
                 <i class="fas fa-arrow-left"></i>
             </a>
+            
+            <a href="{{ route('card.recharge', $card->id) }}" class="btn btn-success">
+                <i class="fas fa-plus"></i>
+            </a>
         </div>
 
         <div class="col-md-6 col-lg-3">

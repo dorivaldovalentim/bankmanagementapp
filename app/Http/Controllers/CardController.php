@@ -109,4 +109,58 @@ class CardController extends Controller
     {
         //
     }
+
+    public function rechargeForm($id)
+    {
+        $card = Card::findOrFail($id);
+        return view('cards.recharge', compact('card'));
+    }
+
+    public function recharge(Request $request, $id)
+    {
+        $card = Card::findOrFail($id);
+        $card->amount += $request->amount;
+
+        switch ($request->reference) {
+            case '0':
+                $card->expenses += $request->amount * 0.4;
+                $card->forme += $request->amount * 0.3;
+                $card->savings += $request->amount * 0.3;
+                break;
+
+            case 'expenses':
+                $card->expenses += $request->amount;
+                break;
+
+            case 'savings':
+                $card->savings += $request->amount;
+                break;
+
+            case 'forme':
+                $card->forme += $request->amount;
+                break;
+            
+            default:
+                return redirect()->back()->with([
+                    'title'       => 'Erro',
+                    'description' => 'Esta opção não existe',
+                    'type'        => 'danger'
+                ]);
+                break;
+        }
+
+        if ($card->save()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Recarga efectuada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao efectuar recarga',
+            'type'        => 'danger'
+        ]);
+    }
 }

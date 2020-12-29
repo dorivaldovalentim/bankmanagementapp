@@ -27,5 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', "CardController@create")->name('card.create');
         Route::post('/store', "CardController@store")->name('card.store');
         Route::get('/show/{id}', "CardController@show")->name('card.show');
+        Route::get('/recharge/{id}', "CardController@rechargeForm")->name('card.recharge');
+        Route::put('/recharge/{id}', "CardController@recharge")->name('card.recharge');
     });
 });

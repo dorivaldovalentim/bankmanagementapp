@@ -29,5 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/show/{id}', "CardController@show")->name('card.show');
         Route::get('/recharge/{id}', "CardController@rechargeForm")->name('card.recharge');
         Route::put('/recharge/{id}', "CardController@recharge")->name('card.recharge');
+        Route::get('/discharge/{id}', "CardController@dischargeForm")->name('card.discharge');
+        Route::put('/discharge/{id}', "CardController@discharge")->name('card.discharge');
     });
 });

@@ -30,6 +30,10 @@
             <a href="{{ route('card.recharge', $card->id) }}" class="btn btn-success">
                 <i class="fas fa-plus"></i>
             </a>
+            
+            <a href="{{ route('card.discharge', $card->id) }}" class="btn btn-info">
+                <i class="fas fa-minus"></i>
+            </a>
         </div>
 
         <div class="col-md-6 col-lg-3">

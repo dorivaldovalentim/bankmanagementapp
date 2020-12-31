@@ -25,7 +25,7 @@ class NeedController extends Controller
      */
     public function create()
     {
-        //
+        return view('needs.create');
     }
 
     /**
@@ -35,8 +35,20 @@ class NeedController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {        
+        if (auth()->user()->needs()->create($request->all())) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Necessidade cadastrada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Necessidade não cadastrada',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

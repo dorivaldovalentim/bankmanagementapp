@@ -36,9 +36,15 @@
                     </div>
                     
                     <div class="card-body">
-                        <p class="card-text">Gastos: {{ $need->amount }}</p>
-                        <p class="card-text">Estado: {{ $need->status }}</p>
-                        <p class="card-text">Descrição: {{ $need->description }}</p>
+                        <p class="card-text">
+                            <strong>Gasto estimado: {{ number_format($need->amount, 2, ',', '.') }} KZs</strong>
+                        </p>
+                        <p class="card-text">
+                            <strong>Estado: {{ $need->status }}</strong>
+                        </p>
+                        <p class="card-text">
+                            <strong>Descrição: {{ $need->description }}</strong>
+                        </p>
                     </div>
 
 

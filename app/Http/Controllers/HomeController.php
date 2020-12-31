@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data = array();
+        $data['cards'] = auth()->user()->cards()->count();
+        $data['amount'] = auth()->user()->cards()->sum('amount');
+
+        return view('home', compact('data'));
     }
 }

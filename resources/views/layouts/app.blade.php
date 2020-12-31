@@ -90,6 +90,13 @@
                             <span class="app-menu__label">Cartões</span>
                         </a>
                     </li>
+                    
+                    <li>
+                        <a class="app-menu__item" href="{{ route('needs.list') }}">
+                            <i class="app-menu__icon fa fa-ad"></i>
+                            <span class="app-menu__label">Necessidades</span>
+                        </a>
+                    </li>
                 </ul>
             </aside>
 

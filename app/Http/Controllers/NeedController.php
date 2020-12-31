@@ -14,7 +14,8 @@ class NeedController extends Controller
      */
     public function index()
     {
-        //
+        $needs = auth()->user()->needs()->get();
+        return view('needs.index', compact('needs'));
     }
 
     /**

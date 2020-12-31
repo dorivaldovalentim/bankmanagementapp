@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Card', 'user_id');
     }
+
+    public function needs()
+    {
+        return $this->hasMany('App\Models\Need', 'user_id');
+    }
 }

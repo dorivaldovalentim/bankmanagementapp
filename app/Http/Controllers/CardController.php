@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bank;
 use App\Models\Card;
+use App\Models\Transation;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -119,6 +120,14 @@ class CardController extends Controller
     public function recharge(Request $request, $id)
     {
         $card = Card::findOrFail($id);
+        
+        $transation = new Transation();
+        $transation->card_id = $id;
+        $transation->amount = $request->amount;
+        $transation->before_transation = $card->amount;
+        $transation->after_transation = $transation->before_transation + $transation->amount;
+        $transation->type = 'I';
+        
         $card->amount += $request->amount;
 
         switch ($request->reference) {
@@ -126,18 +135,22 @@ class CardController extends Controller
                 $card->expenses += $request->amount * 0.4;
                 $card->forme += $request->amount * 0.3;
                 $card->savings += $request->amount * 0.3;
+                $transation->where = 'Geral';
                 break;
 
             case 'expenses':
                 $card->expenses += $request->amount;
+                $transation->where = 'Despesas';
                 break;
 
             case 'savings':
                 $card->savings += $request->amount;
+                $transation->where = 'Poupanças';
                 break;
 
             case 'forme':
                 $card->forme += $request->amount;
+                $transation->where = 'Para mim';
                 break;
             
             default:
@@ -149,7 +162,7 @@ class CardController extends Controller
                 break;
         }
 
-        if ($card->save()) {
+        if ($card->save() && $transation->save()) {
             return redirect()->back()->with([
                 'title'       => 'Sucesso',
                 'description' => 'Recarga efectuada com sucesso',
@@ -173,6 +186,14 @@ class CardController extends Controller
     public function discharge(Request $request, $id)
     {
         $card = Card::findOrFail($id);
+
+        $transation = new Transation();
+        $transation->card_id = $id;
+        $transation->amount = $request->amount;
+        $transation->before_transation = $card->amount;
+        $transation->after_transation = $transation->before_transation - $transation->amount;
+        $transation->type = 'O';
+
         $card->amount -= $request->amount;
 
         switch ($request->reference) {
@@ -180,18 +201,22 @@ class CardController extends Controller
                 $card->expenses -= $request->amount * 0.4;
                 $card->forme -= $request->amount * 0.3;
                 $card->savings -= $request->amount * 0.3;
+                $transation->where = 'Geral';
                 break;
 
             case 'expenses':
                 $card->expenses -= $request->amount;
+                $transation->where = 'Despesas';
                 break;
 
             case 'savings':
                 $card->savings -= $request->amount;
+                $transation->where = 'Poupanças';
                 break;
 
             case 'forme':
                 $card->forme -= $request->amount;
+                $transation->where = 'Para mim';
                 break;
             
             default:
@@ -203,7 +228,7 @@ class CardController extends Controller
                 break;
         }
 
-        if ($card->save()) {
+        if ($card->save() && $transation->save()) {
             return redirect()->back()->with([
                 'title'       => 'Sucesso',
                 'description' => 'Valor retirado com sucesso',

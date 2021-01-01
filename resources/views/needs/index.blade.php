@@ -28,26 +28,26 @@
 
         @forelse ($needs as $need)
 
-            <a href="{{ route('need.show', $need->id) }}" class="col-md-4">
+            <a href="{{ route('need.show', $need->id) }}" class="col-lg-4 col-md-6 mb-4 text-dark">
 
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="title">{{ $need->need }}</h4>
+                    <div class="card-header {{ $need->status ? 'bg-success' : 'bg-danger' }}">
+                        <h4 class="title text-white m-0">{{ $need->need }}</h4>
                     </div>
                     
                     <div class="card-body">
                         <p class="card-text">
                             <strong>Gasto estimado: {{ number_format($need->amount, 2, ',', '.') }} KZs</strong>
                         </p>
+
                         <p class="card-text">
-                            <strong>Estado: {{ $need->status }}</strong>
+                            <strong>Estado: {!! $need->status ? '<span class="text-success">não te preocupes 😉</span>' : '<span class="text-danger">corre! 😅</span>' !!}</strong>
                         </p>
+
                         <p class="card-text">
                             <strong>Descrição: {{ $need->description }}</strong>
                         </p>
                     </div>
-
-
                 </div>
         
             </a>

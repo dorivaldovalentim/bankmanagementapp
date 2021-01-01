@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Card;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,6 +26,7 @@ class HomeController extends Controller
         $data = array();
         $data['cards'] = auth()->user()->cards()->count();
         $data['amount'] = auth()->user()->cards()->sum('amount');
+        $data['needs'] = auth()->user()->needs()->whereStatus(0)->sum('amount');
 
         return view('home', compact('data'));
     }

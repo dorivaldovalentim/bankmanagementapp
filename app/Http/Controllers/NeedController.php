@@ -57,9 +57,10 @@ class NeedController extends Controller
      * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function show(Need $need)
+    public function show($id)
     {
-        //
+        $need = Need::findOrFail($id);
+        return view('needs.show', compact('need'));
     }
 
     /**

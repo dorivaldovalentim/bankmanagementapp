@@ -127,6 +127,7 @@ class CardController extends Controller
         $transation->before_transation = $card->amount;
         $transation->after_transation = $transation->before_transation + $transation->amount;
         $transation->type = 'I';
+        $transation->description = $request->description;
         
         $card->amount += $request->amount;
 
@@ -193,6 +194,7 @@ class CardController extends Controller
         $transation->before_transation = $card->amount;
         $transation->after_transation = $transation->before_transation - $transation->amount;
         $transation->type = 'O';
+        $transation->description = $request->description;
 
         $card->amount -= $request->amount;
 

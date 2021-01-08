@@ -42,7 +42,7 @@
 
                     <!-- User Menu-->
                     <li class="dropdown">
-                        <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
+                        <a class="app-nav__item" href="#" onclick="event.preventDefault(); $('#logout-form').submit();" data-toggle="dropdown" aria-label="Open Profile Menu">
                             <i class="fa fa-user fa-lg"></i>
                         </a>
 
@@ -59,6 +59,8 @@
                                     <i class="fa fa-sign-out fa-lg"></i>
                                     Sair
                                 </a>
+
+                                <form action="{{ route('logout') }}" method="post" id="logout-form">@csrf</form>
                             </li>
                         </ul>
                     </li>

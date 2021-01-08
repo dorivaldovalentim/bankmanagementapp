@@ -35,7 +35,7 @@ class NeedController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {
         if (auth()->user()->needs()->create($request->all())) {
             return redirect()->back()->with([
                 'title'       => 'Sucesso',
@@ -69,9 +69,10 @@ class NeedController extends Controller
      * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function edit(Need $need)
+    public function edit($id)
     {
-        //
+        $need = Need::findOrFail($id);
+        return view('needs.edit', compact('need'));
     }
 
     /**
@@ -81,9 +82,21 @@ class NeedController extends Controller
      * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Need $need)
+    public function update(Request $request, $id)
     {
-        //
+        if (auth()->user()->needs()->findOrFail($id)->fill($request->all())->save()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Necessidade actualizada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Necessidade não actualizada',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

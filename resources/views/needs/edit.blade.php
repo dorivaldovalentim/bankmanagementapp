@@ -46,6 +46,14 @@
             </div>
 
             <div class="form-group">
+                <select name="status" class="form-control">
+                    <option value="">Estado</option>
+                    <option {{ $need->status ? 'selected' : '' }} value="1">Done</option>
+                    <option {{ $need->status ? '' : 'selected' }} value="0">Not done</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <button type="submit" class="btn btn-success">Actualizar</button>
             </div>
         </form>

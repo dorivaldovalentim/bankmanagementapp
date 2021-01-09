@@ -48,6 +48,10 @@
             </div>
 
             <div class="form-group">
+                <textarea name="description" id="description" placeholder="Descrição" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
                 <button type="submit" class="btn btn-success">Retirar</button>
             </div>
         </form>

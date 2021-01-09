@@ -37,9 +37,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /** Relacionando user com os cartões */
+
     public function cards()
     {
-        return $this->hasMany('App\Models\Card', 'user_id');
+        return $this->hasMany('App\Models\Card');
+    }
+
+    /** Relacionando user com as transações */
+    
+    public function transations()
+    {
+        return $this->hasMany('App\Models\Transation');
     }
 
     public function needs()

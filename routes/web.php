@@ -39,6 +39,14 @@ Route::group(['middleware' => 'auth'], function () {
     });
     
     /**
+     * Transations Routes
+     */
+
+    Route::group(['prefix' => 'transations'], function () {
+        Route::get('/', "TransationController@index")->name('transations.list');
+    });
+    
+    /**
      * Needs Routes
      */
 

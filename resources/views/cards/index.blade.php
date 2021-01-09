@@ -24,6 +24,10 @@
             <a href="{{ route('card.create') }}" class="btn btn-success">
                 <i class="fas fa-plus"></i>
             </a>
+            
+            <a href="{{ route('transations.list') }}" class="btn btn-info">
+                <i class="fas fa-eye"></i>
+            </a>
         </div>
 
         @forelse ($cards as $card)

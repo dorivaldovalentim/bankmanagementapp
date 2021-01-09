@@ -122,6 +122,7 @@ class CardController extends Controller
         $card = Card::findOrFail($id);
         
         $transation = new Transation();
+        $transation->user_id = auth()->user()->id;
         $transation->card_id = $id;
         $transation->amount = $request->amount;
         $transation->before_transation = $card->amount;
@@ -189,6 +190,7 @@ class CardController extends Controller
         $card = Card::findOrFail($id);
 
         $transation = new Transation();
+        $transation->user_id = auth()->user()->id;
         $transation->card_id = $id;
         $transation->amount = $request->amount;
         $transation->before_transation = $card->amount;

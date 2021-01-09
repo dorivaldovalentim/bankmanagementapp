@@ -77,9 +77,10 @@ class DebitController extends Controller
      * @param  \App\Models\Debit  $debit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Debit $debit)
+    public function edit($id)
     {
-        //
+        $debit = Debit::findOrFail($id);
+        return view('debits.edit', compact('debit'));
     }
 
     /**

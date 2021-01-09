@@ -26,10 +26,14 @@
             <a href="{{ route('debits.list') }}" class="btn btn-danger">
                 <i class="fas fa-arrow-left"></i>
             </a>
+
+            <h3 class="text-danger mt-2">{{ $debit->name }}</h3>
         </div>
 
         <form action="{{ route('debit.update', $debit->id) }}" method="POST" class="col-md-6">
             @csrf
+
+            @METHOD('put')
 
             <div class="form-group">
                 <input type="text" name="amount" placeholder="Montante" class="form-control" />

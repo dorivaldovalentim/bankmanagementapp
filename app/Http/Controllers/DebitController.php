@@ -21,7 +21,7 @@ class DebitController extends Controller
         $data = array(
             'debits_to_give' => $debits_to_give,
             'debits_to_receive' => $debits_to_receive,
-            'debits_to_desfruit' => $debits_to_receive + $debits_to_give <= 0 ? 0 : $debits_to_receive + $debits_to_give
+            'debits_to_desfruit' => $debits_to_receive + $debits_to_give
         );
 
         return view('debits.index', compact('debits', 'data'));
@@ -90,9 +90,24 @@ class DebitController extends Controller
      * @param  \App\Models\Debit  $debit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Debit $debit)
+    public function update(Request $request, $id)
     {
-        //
+        $debit = (new Debit())->findOrFail($id);
+        $debit->amount += $request->amount;
+
+        if ($debit->update()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Dívida actualizada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Dívida não actualizada',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

@@ -34,7 +34,7 @@ class DebitController extends Controller
      */
     public function create()
     {
-        //
+        return view('debits.create');
     }
 
     /**
@@ -45,7 +45,19 @@ class DebitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (auth()->user()->debits()->create($request->all())) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Pessoa cadastrada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Pessoa não cadastrada',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

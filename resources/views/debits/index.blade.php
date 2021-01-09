@@ -22,12 +22,8 @@
     <div class="row">
 
         <div class="col-md-12 mb-3">
-            <a href="#" class="btn btn-success">
+            <a href="{{ route('debit.create') }}" class="btn btn-success">
                 <i class="fas fa-plus"></i>
-            </a>
-            
-            <a href="#" class="btn btn-info">
-                <i class="fas fa-minus"></i>
             </a>
         </div>
 

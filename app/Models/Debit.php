@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Debit extends Model
 {
+    protected $guarded = array('_token');
+
     /** Relacionando dívidas com usuários */
     
     public function user()

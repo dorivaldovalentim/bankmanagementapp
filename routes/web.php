@@ -47,6 +47,20 @@ Route::group(['middleware' => 'auth'], function () {
     });
     
     /**
+     * Debits Routes
+     */
+
+    Route::group(['prefix' => 'debits'], function () {
+        Route::get('/', "DebitController@index")->name('debits.list');
+        Route::get('/create', "DebitController@create")->name('debit.create');
+        Route::post('/store', "DebitController@store")->name('debit.store');
+        Route::get('/show/{id}', "DebitController@show")->name('debit.show');
+        Route::get('/edit/{id}', "DebitController@edit")->name('debit.edit');
+        Route::put('/update/{id}', "DebitController@update")->name('debit.update');
+        Route::delete('/destroy/{id}', "DebitController@destroy")->name('debit.destroy');
+    });
+    
+    /**
      * Needs Routes
      */
 

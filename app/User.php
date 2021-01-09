@@ -51,8 +51,17 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Transation');
     }
 
+    /** Relacionando user com as dívidas */
+
+    public function debits()
+    {
+        return $this->hasMany('App\Models\Debit');
+    }
+
+    /** Relacionando user com as necessidades */
+
     public function needs()
     {
-        return $this->hasMany('App\Models\Need', 'user_id');
+        return $this->hasMany('App\Models\Need');
     }
 }

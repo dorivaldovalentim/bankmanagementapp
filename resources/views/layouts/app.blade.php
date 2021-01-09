@@ -94,6 +94,13 @@
                     </li>
                     
                     <li>
+                        <a class="app-menu__item" href="{{ route('debits.list') }}">
+                            <i class="app-menu__icon fa fa-ad"></i>
+                            <span class="app-menu__label">Dívidas</span>
+                        </a>
+                    </li>
+                    
+                    <li>
                         <a class="app-menu__item" href="{{ route('needs.list') }}">
                             <i class="app-menu__icon fa fa-ad"></i>
                             <span class="app-menu__label">Necessidades</span>

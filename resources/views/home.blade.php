@@ -15,7 +15,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small primary coloured-icon">
                 <i class="icon fa fa-credit-card fa-3x"></i>
 
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small info coloured-icon">
                 <i class="icon fa fa-money-bill-alt fa-3x"></i>
 
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small danger coloured-icon">
                 <i class="icon fa fa-money-bill-alt fa-3x"></i>
 

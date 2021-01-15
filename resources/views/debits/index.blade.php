@@ -67,7 +67,7 @@
                 <div class="card-body p-0">
 
                     <div class="table-responsive">
-                        <table class="table table-condensed m-0">
+                        <table class="table table-condensed table-hover m-0">
                             <thead>
                                 <tr>
                                     <th>Nome</th>
@@ -84,12 +84,16 @@
                                         <td>{{ number_format($debit->amount, 2, ',', '.') }} KZs</td>
                                         <td>{{ $debit->updated_at }}</td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-success btn-sm">
+                                            <a href="{{ route('debits_logs.list', $debit->id) }}" class="btn btn-success btn-sm">
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                             
                                             <a href="{{ route('debit.edit', $debit->id) }}" class="btn btn-info btn-sm">
                                                 <i class="fas fa-edit"></i>
+                                            </a>
+                                            
+                                            <a href="{{ route('debits_log.create', $debit->id) }}" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-plus"></i>
                                             </a>
                                         </td>
                                     </tr>

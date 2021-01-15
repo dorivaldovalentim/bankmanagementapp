@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DebitsLog extends Model
 {
+    protected $guarded = array('_token');
+    
     /** Relacionando log de dívidas com usuários */
     
     public function user()

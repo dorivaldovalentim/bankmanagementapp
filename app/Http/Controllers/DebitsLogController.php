@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Debit;
 use App\Models\DebitsLog;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,10 @@ class DebitsLogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $debits_logs = (new Debit)->findOrFail($id)->debits_logs()->orderByDesc('created_at')->paginate(10);
+        return view("debits_logs.index", compact('debits_logs'));
     }
 
     /**
@@ -22,9 +24,10 @@ class DebitsLogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $debit = (new Debit)->findOrFail($id);
+        return view('debits_logs.create', compact('debit'));
     }
 
     /**
@@ -33,9 +36,33 @@ class DebitsLogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $debit = auth()->user()->debits()->findOrFail($id);
+
+        $debits_log = new DebitsLog();
+        $debits_log->debit_id = $id;
+        $debits_log->user_id = auth()->user()->id;
+        $debits_log->amount = $request->amount;
+        $debits_log->description = $request->description;
+
+        if ($debits_log->save()) {
+            $debit->amount += $request->amount;
+    
+            if ($debit->update()) {
+                return redirect()->back()->with([
+                    'title'       => 'Sucesso',
+                    'description' => 'Log cadastrado com sucesso',
+                    'type'        => 'success'
+                ]);
+            }
+        }
+    
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Log não cadastrado',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

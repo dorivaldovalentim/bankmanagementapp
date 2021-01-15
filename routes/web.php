@@ -61,6 +61,16 @@ Route::group(['middleware' => 'auth'], function () {
     });
     
     /**
+     * Debits Logs Routes
+     */
+
+    Route::group(['prefix' => 'debits_logs'], function () {
+        Route::get('/{id}', "DebitsLogController@index")->name('debits_logs.list');
+        Route::get('/create/{id}', "DebitsLogController@create")->name('debits_log.create');
+        Route::post('/store/{id}', "DebitsLogController@store")->name('debits_log.store');
+    });
+    
+    /**
      * Needs Routes
      */
 

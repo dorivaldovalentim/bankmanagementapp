@@ -14,4 +14,10 @@ class Debit extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    /** Relacionando dívidas com log de dívidas */
+    public function debits_logs()
+    {
+        return $this->hasMany('App\Models\DebitsLog');
+    }
 }

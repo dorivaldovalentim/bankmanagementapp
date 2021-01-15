@@ -58,6 +58,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Debit');
     }
 
+    /** Relacionando user com as log de dívidas */
+
+    public function debits_logs()
+    {
+        return $this->hasMany('App\Models\DebitsLog');
+    }
+
     /** Relacionando user com as necessidades */
 
     public function needs()

@@ -93,7 +93,7 @@ class DebitController extends Controller
     public function update(Request $request, $id)
     {
         $debit = (new Debit())->findOrFail($id);
-        $debit->amount += $request->amount;
+        $debit->name = $request->name;
 
         if ($debit->update()) {
             return redirect()->back()->with([

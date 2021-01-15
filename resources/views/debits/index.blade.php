@@ -27,7 +27,7 @@
             </a>
         </div>
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small primary coloured-icon">
                 <i class="icon fa fa-money-bill-wave fa-3x"></i>
     
@@ -38,7 +38,7 @@
             </div>
         </div>
     
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small info coloured-icon">
                 <i class="icon fa fa-user fa-3x"></i>
     
@@ -49,7 +49,7 @@
             </div>
         </div>
     
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-4">
             <div class="widget-small warning coloured-icon">
                 <i class="icon fa fa-box fa-3x"></i>
     

@@ -34,10 +34,17 @@
 
             <a href="{{ route('card.show', $card->id) }}" class="col-md-4 text-white">
 
-                <div class="card" style="background: {{ $card->bank->color }}">
+                <div class="card p-3"
+                    style="
+                        background: {{ $card->bank->color }};
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat
+                    "
+                >
                     
                     <div class="card-body">
-                        <h2 class="card-title">{{ $card->bank->name }}</h2>
+                        {{-- <h2 class="card-title">{{ $card->bank->name }}</h2> --}}
                         <p class="card-text">IBAN: {{ $card->iban }}</p>
                         <p class="card-text">Número: {{ $card->number }}</p>
                         <p class="card-text">Data de expiração: {{ $card->expires_at }}</p>

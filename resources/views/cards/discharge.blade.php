@@ -34,7 +34,7 @@
             @METHOD('put')
 
             <div class="form-group">
-                <input type="number" name="amount" placeholder="Valor em kzs" class="form-control" />
+                <input type="text" name="amount" placeholder="Valor em kzs" class="form-control" />
             </div>
 
             <div class="form-group">

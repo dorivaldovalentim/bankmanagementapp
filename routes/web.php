@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'transations'], function () {
         Route::get('/', "TransationController@index")->name('transations.list');
         Route::get('/create/{id}', "TransationController@create")->name('transation.create');
-        Route::get('/store/{id}', "TransationController@store")->name('transation.store');
+        Route::post('/store/{id}', "TransationController@store")->name('transation.store');
         Route::get('/show/{id}', "TransationController@show")->name('transation.show');
     });
     

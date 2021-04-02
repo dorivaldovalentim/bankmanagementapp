@@ -23,9 +23,10 @@ class TransationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $card = auth()->user()->cards()->findOrFail($id);
+        return view('transations.create', compact('card'));
     }
 
     /**

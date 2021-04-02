@@ -31,7 +31,7 @@
                 <a href="{{ route('home') }}" class="app-header__logo">BankManagement</a>
                 <!-- Sidebar toggle button-->
                 <a href="#" class="app-sidebar__toggle text-center" data-toggle="sidebar" aria-label="Hide Sidebar">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars fa-lg"></i>
                 </a>
                 <!-- Navbar Right Menu-->
                 <ul class="app-nav">

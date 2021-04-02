@@ -28,9 +28,8 @@
                         <table class="table table-condensed m-0">
                             <thead>
                                 <tr>
-                                    <th>Usuário</th>
-                                    <th>Dívida de:</th>
                                     <th>Montante</th>
+                                    <th>Descriçao</th>
                                     <th>Data</th>
                                 </tr>
                             </thead>
@@ -38,9 +37,8 @@
                             <tbody>
                                 @forelse($debits_logs as $debits_log)
                                     <tr>
-                                        <td>{{ $debits_log->user->name }}</td>
-                                        <td>{{ $debits_log->debit->name }}</td>
                                         <td>{{ number_format($debits_log->amount, 2, ',', '.') }} KZs</td>
+                                        <td>{{ $debits_log->description }}</td>
                                         <td>{{ $debits_log->created_at }}</td>
                                     </tr>
                                 @empty

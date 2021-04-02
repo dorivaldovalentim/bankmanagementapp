@@ -25,29 +25,23 @@
                 <div class="card-body p-0">
 
                     <div class="table-responsive">
-                        <table class="table table-condensed m-0">
+                        <table class="table table-condensed m-0 table-sm">
                             <thead>
                                 <tr>
-                                    <th>Usuário</th>
                                     <th>Cartão</th>
                                     <th>Montante</th>
-                                    <th>Antes</th>
-                                    <th>Depois</th>
                                     <th>Onde</th>
                                     <th>Tipo</th>
                                     <th>Data</th>
-                                    <th>Ação</th>
+                                    <th>Descrição</th>
                                 </tr>
                             </thead>
     
                             <tbody>
                                 @forelse($transations as $transation)
                                     <tr>
-                                        <td>{{ $transation->user->name }}</td>
                                         <td>{{ $transation->card->id }}</td>
                                         <td>{{ number_format($transation->amount, 2, ',', '.') }} KZs</td>
-                                        <td>{{ number_format($transation->before_transation, 2, ',', '.') }} KZs</td>
-                                        <td>{{ number_format($transation->after_transation, 2, ',', '.') }} KZs</td>
                                         <td>{{ $transation->where }}</td>
                                         <td>
                                             <strong>
@@ -57,11 +51,7 @@
                                             </strong>
                                         </td>
                                         <td>{{ $transation->created_at }}</td>
-                                        <td>
-                                            <a href="#" class="btn btn-success btn-sm">
-                                                <i class="fas fa-eye"></i>
-                                            </a>
-                                        </td>
+                                        <td>{{ $transation->description }}</td>
                                     </tr>
                                 @empty
                                     <tr>

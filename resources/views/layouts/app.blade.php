@@ -42,7 +42,7 @@
 
                     <!-- User Menu-->
                     <li class="dropdown">
-                        <a class="app-nav__item" href="#" onclick="event.preventDefault(); $('#logout-form').submit();" data-toggle="dropdown" aria-label="Open Profile Menu">
+                        <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
                             <i class="fa fa-user fa-lg"></i>
                         </a>
 
@@ -55,7 +55,7 @@
                             </li>
 
                             <li>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" onclick="event.preventDefault(); $('#logout-form').submit();">
                                     <i class="fa fa-sign-out fa-lg"></i>
                                     Sair
                                 </a>

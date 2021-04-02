@@ -35,9 +35,66 @@ class TransationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $card = Card::findOrFail($id);
+        
+        $transation = new Transation();
+        $transation->user_id = auth()->user()->id;
+        $transation->card_id = $id;
+        $transation->amount = $request->amount;
+        $transation->before_transation = $card->amount;
+        $transation->after_transation = $transation->before_transation + $transation->amount;
+        $transation->type = $request->type;
+        $transation->description = $request->description;
+        
+        $card->amount += $request->amount;
+
+        switch ($request->reference) {
+            case '0':
+                $card->expenses += $request->amount * 0.4;
+                $card->forme += $request->amount * 0.3;
+                $card->savings += $request->amount * 0.3;
+                $transation->where = 'Geral';
+                break;
+
+            case 'expenses':
+                $card->expenses += $request->amount;
+                $transation->where = 'Despesas';
+                break;
+
+            case 'savings':
+                $card->savings += $request->amount;
+                $transation->where = 'Poupanças';
+                break;
+
+            case 'forme':
+                $card->forme += $request->amount;
+                $transation->where = 'Para mim';
+                break;
+            
+            default:
+                return redirect()->back()->with([
+                    'title'       => 'Erro',
+                    'description' => 'Esta opção não existe',
+                    'type'        => 'danger'
+                ]);
+                break;
+        }
+
+        if ($card->save() && $transation->save()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Recarga efectuada com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao efectuar recarga',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

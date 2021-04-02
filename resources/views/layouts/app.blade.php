@@ -56,7 +56,7 @@
 
                             <li>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); $('#logout-form').submit();">
-                                    <i class="fa fa-sign-out fa-lg"></i>
+                                    <i class="fa fa-sign-out-alt fa-lg"></i>
                                     Sair
                                 </a>
 

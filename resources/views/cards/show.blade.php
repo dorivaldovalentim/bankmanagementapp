@@ -34,6 +34,10 @@
             <a href="{{ route('card.discharge', $card->id) }}" class="btn btn-info">
                 <i class="fas fa-minus"></i>
             </a>
+            
+            <a href="{{ route('transations.show', $card->id) }}" class="btn btn-primary">
+                <i class="fas fa-eye"></i>
+            </a>
         </div>
 
         <div class="col-md-6 col-lg-3">

@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'transations'], function () {
         Route::get('/', "TransationController@index")->name('transations.list');
+        Route::get('/show/{id}', "TransationController@show")->name('transations.show');
     });
     
     /**

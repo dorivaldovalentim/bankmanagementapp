@@ -45,9 +45,10 @@ class TransationController extends Controller
      * @param  \App\Models\Transation  $transation
      * @return \Illuminate\Http\Response
      */
-    public function show(Transation $transation)
+    public function show($id)
     {
-        //
+        $transations = auth()->user()->transations()->whereCardId($id)->orderByDesc('created_at')->paginate(100);
+        return view('transations.show', compact('transations'));
     }
 
     /**

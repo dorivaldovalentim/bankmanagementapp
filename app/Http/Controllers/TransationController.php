@@ -14,7 +14,7 @@ class TransationController extends Controller
      */
     public function index()
     {
-        $transations = auth()->user()->transations()->orderByDesc('created_at')->paginate(8);
+        $transations = auth()->user()->transations()->orderByDesc('created_at')->paginate(100);
         return view('transations.index', compact('transations'));
     }
 

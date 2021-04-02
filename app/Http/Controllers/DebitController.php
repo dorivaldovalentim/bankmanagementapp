@@ -14,7 +14,7 @@ class DebitController extends Controller
      */
     public function index()
     {
-        $debits = auth()->user()->debits()->orderBy('name')->paginate(10);
+        $debits = auth()->user()->debits()->orderBy('name')->paginate(50);
         $debits_to_give = auth()->user()->debits()->where('amount', '<', '0')->sum('amount');
         $debits_to_receive = auth()->user()->debits()->where('amount', '>', '0')->sum('amount');
 

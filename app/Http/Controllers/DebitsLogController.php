@@ -15,7 +15,7 @@ class DebitsLogController extends Controller
      */
     public function index($id)
     {
-        $debits_logs = (new Debit)->findOrFail($id)->debits_logs()->orderByDesc('created_at')->paginate(10);
+        $debits_logs = (new Debit)->findOrFail($id)->debits_logs()->orderByDesc('created_at')->paginate(50);
         return view("debits_logs.index", compact('debits_logs'));
     }
 

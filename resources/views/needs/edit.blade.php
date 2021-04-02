@@ -46,7 +46,7 @@
             </div>
 
             <div class="form-group">
-                <select name="status" class="form-control">
+                <select name="status" class="form-control" {{ $need->status ? 'disabled' : '' }}>
                     <option value="">Estado</option>
                     <option {{ $need->status ? 'selected' : '' }} value="1">Done</option>
                     <option {{ $need->status ? '' : 'selected' }} value="0">Not done</option>

@@ -84,7 +84,18 @@ class NeedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (auth()->user()->needs()->findOrFail($id)->fill($request->all())->save()) {
+        if (auth()->user()->needs()->findOrFail($id)->status) {
+            $need = array([
+                'need' => $request->need,
+                'amount' => $request->amount,
+                'description' => $request->description,
+            ]);
+        } else {
+            $need = $request->all();
+        }
+        
+
+        if (auth()->user()->needs()->findOrFail($id)->fill($need)->save()) {
             return redirect()->back()->with([
                 'title'       => 'Sucesso',
                 'description' => 'Necessidade actualizada com sucesso',

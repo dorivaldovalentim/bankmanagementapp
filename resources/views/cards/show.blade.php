@@ -27,12 +27,8 @@
                 <i class="fas fa-arrow-left"></i>
             </a>
             
-            <a href="{{ route('transation.create', $card->id) }}" class="btn btn-success" data-toggle="tooltip" title="Recarregar">
+            <a href="{{ route('transation.create', $card->id) }}" class="btn btn-success" data-toggle="tooltip" title="Adicionar transação">
                 <i class="fas fa-plus"></i>
-            </a>
-            
-            <a href="{{ route('transation.create', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Sacar">
-                <i class="fas fa-minus"></i>
             </a>
             
             <a href="{{ route('transation.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">

@@ -23,19 +23,19 @@
     <div class="row">
 
         <div class="col-md-12 mb-3">
-            <a href="{{ route('cards.list') }}" class="btn btn-danger">
+            <a href="{{ route('cards.list') }}" class="btn btn-danger" data-toggle="tooltip" title="Voltar">
                 <i class="fas fa-arrow-left"></i>
             </a>
             
-            <a href="{{ route('card.recharge', $card->id) }}" class="btn btn-success">
+            <a href="{{ route('card.recharge', $card->id) }}" class="btn btn-success" data-toggle="tooltip" title="Recarregar">
                 <i class="fas fa-plus"></i>
             </a>
             
-            <a href="{{ route('card.discharge', $card->id) }}" class="btn btn-info">
+            <a href="{{ route('card.discharge', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Sacar">
                 <i class="fas fa-minus"></i>
             </a>
             
-            <a href="{{ route('transations.show', $card->id) }}" class="btn btn-primary">
+            <a href="{{ route('transations.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">
                 <i class="fas fa-eye"></i>
             </a>
         </div>

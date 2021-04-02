@@ -23,7 +23,7 @@
     <div class="row">
 
         <div class="col-md-12 mb-3">
-            <a href="{{ route('card.show', $card->id) }}" class="btn btn-danger">
+            <a href="{{ route('card.show', $card->id) }}" class="btn btn-danger" data-toggle="tooltip" title="Voltar">
                 <i class="fas fa-arrow-left"></i>
             </a>
         </div>

@@ -21,7 +21,7 @@
 
     <div class="row">
         <div class="col-md-12 mb-3">
-            <a href="{{ route('need.create') }}" class="btn btn-success">
+            <a href="{{ route('need.create') }}" class="btn btn-success" data-toggle="tooltip" title="Nova necessidade">
                 <i class="fas fa-plus"></i>
             </a>
         </div>

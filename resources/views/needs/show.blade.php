@@ -23,11 +23,11 @@
     <div class="row">
 
         <div class="col-md-12 mb-3">
-            <a href="{{ route('needs.list') }}" class="btn btn-danger">
+            <a href="{{ route('needs.list') }}" class="btn btn-danger" data-toggle="tooltip" title="Voltar">
                 <i class="fas fa-arrow-left"></i>
             </a>
             
-            <a href="{{ route('need.edit', $need->id) }}" class="btn btn-info">
+            <a href="{{ route('need.edit', $need->id) }}" class="btn btn-info" data-toggle="tooltip" title="Editar necessidade">
                 <i class="fas fa-edit"></i>
             </a>
         </div>

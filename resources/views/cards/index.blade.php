@@ -21,11 +21,11 @@
 
     <div class="row">
         <div class="col-md-12 mb-3">
-            <a href="{{ route('card.create') }}" class="btn btn-success">
+            <a href="{{ route('card.create') }}" class="btn btn-success" data-toggle="tooltip" title="Novo cartão">
                 <i class="fas fa-plus"></i>
             </a>
             
-            <a href="{{ route('transations.list') }}" class="btn btn-info">
+            <a href="{{ route('transations.list') }}" class="btn btn-info" data-toggle="tooltip" title="Ver transações gerais">
                 <i class="fas fa-eye"></i>
             </a>
         </div>

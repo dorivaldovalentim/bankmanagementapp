@@ -22,7 +22,7 @@
     <div class="row">
 
         <div class="col-md-12 mb-3">
-            <a href="{{ route('debit.create') }}" class="btn btn-success">
+            <a href="{{ route('debit.create') }}" class="btn btn-success" data-toggle="tooltip" title="Nova pessoa">
                 <i class="fas fa-plus"></i>
             </a>
         </div>
@@ -84,15 +84,15 @@
                                         <td>{{ number_format($debit->amount, 2, ',', '.') }} KZs</td>
                                         <td>{{ $debit->updated_at }}</td>
                                         <td class="text-center">
-                                            <a href="{{ route('debits_logs.list', $debit->id) }}" class="btn btn-success btn-sm">
+                                            <a href="{{ route('debits_logs.list', $debit->id) }}" class="btn btn-success btn-sm" data-toggle="tooltip" title="Ver histórico">
                                                 <i class="fas fa-eye"></i>
                                             </a>
                                             
-                                            <a href="{{ route('debit.edit', $debit->id) }}" class="btn btn-info btn-sm">
+                                            <a href="{{ route('debit.edit', $debit->id) }}" class="btn btn-info btn-sm" data-toggle="tooltip" title="Editar informações da pessoa">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                             
-                                            <a href="{{ route('debits_log.create', $debit->id) }}" class="btn btn-primary btn-sm">
+                                            <a href="{{ route('debits_log.create', $debit->id) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Adicionar ao histórico">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                         </td>

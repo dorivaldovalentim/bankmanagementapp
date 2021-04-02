@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
 use App\Models\Transation;
 use Illuminate\Http\Request;
 
@@ -38,38 +39,112 @@ class TransationController extends Controller
     public function store(Request $request, $id)
     {
         $card = Card::findOrFail($id);
+        $card_amount = $card->amount;
         
         $transation = new Transation();
         $transation->user_id = auth()->user()->id;
+        $transation->type = $request->type;
         $transation->card_id = $id;
         $transation->amount = $request->amount;
+        
+        if ($transation->type == 'O' && $card->amount == $transation->amount) {
+            $transation->before_transation = $card->amount;
+            $transation->after_transation = 0;
+            $card->amount = 0;
+            $card->expenses = 0;
+            $card->forme = 0;
+            $card->savings = 0;
+
+            if ($card->save() && $transation->save()) {
+                return redirect()->back()->with([
+                    'title'       => 'Sucesso',
+                    'description' => 'Transação efectuada com sucesso',
+                    'type'        => 'success'
+                ]);
+            }
+        }
+
         $transation->before_transation = $card->amount;
         $transation->after_transation = $transation->before_transation + $transation->amount;
-        $transation->type = $request->type;
         $transation->description = $request->description;
         
-        $card->amount += $request->amount;
+        if ($transation->type == 'I') {
+            $card->amount += $request->amount;
+        } elseif ($transation->type == 'O') {
+            $card->amount -= $request->amount;
+        }
 
         switch ($request->reference) {
             case '0':
-                $card->expenses += $request->amount * 0.4;
-                $card->forme += $request->amount * 0.3;
-                $card->savings += $request->amount * 0.3;
+                if ($transation->type == 'I') {
+                    $card->expenses += $request->amount * 0.4;
+                    $card->forme += $request->amount * 0.3;
+                    $card->savings += $request->amount * 0.3;
+                } elseif ($transation->type == 'O') {
+                    if ($card->amount < $request->amount) {
+                        return redirect()->back()->with([
+                            'title'       => 'Aviso',
+                            'description' => 'Só pode sacar até ' . number_format($card_amount, 2, ',', '.') . ' KZs',
+                            'type'        => 'warning'
+                        ]);
+                    }
+
+                    $card->expenses -= $request->amount * 0.4;
+                    $card->forme -= $request->amount * 0.3;
+                    $card->savings -= $request->amount * 0.3;
+                }
+
                 $transation->where = 'Geral';
                 break;
 
             case 'expenses':
-                $card->expenses += $request->amount;
+                if ($transation->type == 'I') {
+                    $card->expenses += $request->amount;
+                } elseif ($transation->type == 'O') {
+                    if ($card->expenses < $request->amount) {
+                        return redirect()->back()->with([
+                            'title'       => 'Aviso',
+                            'description' => 'Só pode sacar até ' . number_format($card->expenses, 2, ',', '.') . ' KZs',
+                            'type'        => 'warning'
+                        ]);
+                    }
+                    $card->expenses -= $request->amount;
+                }
+
                 $transation->where = 'Despesas';
                 break;
 
             case 'savings':
-                $card->savings += $request->amount;
+                if ($transation->type == 'I') {
+                    $card->savings += $request->amount;
+                } elseif ($transation->type == 'O') {
+                    if ($card->savings < $request->amount) {
+                        return redirect()->back()->with([
+                            'title'       => 'Aviso',
+                            'description' => 'Só pode sacar até ' . number_format($card->savings, 2, ',', '.') . ' KZs',
+                            'type'        => 'warning'
+                        ]);
+                    }
+                    $card->savings -= $request->amount;
+                }
+
                 $transation->where = 'Poupanças';
                 break;
 
             case 'forme':
-                $card->forme += $request->amount;
+                if ($transation->type == 'I') {
+                    $card->forme += $request->amount;
+                } elseif ($transation->type == 'O') {
+                    if ($card->forme < $request->amount) {
+                        return redirect()->back()->with([
+                            'title'       => 'Aviso',
+                            'description' => 'Só pode sacar até ' . number_format($card->forme, 2, ',', '.') . ' KZs',
+                            'type'        => 'warning'
+                        ]);
+                    }
+                    $card->forme -= $request->amount;
+                }
+
                 $transation->where = 'Para mim';
                 break;
             
@@ -85,14 +160,14 @@ class TransationController extends Controller
         if ($card->save() && $transation->save()) {
             return redirect()->back()->with([
                 'title'       => 'Sucesso',
-                'description' => 'Recarga efectuada com sucesso',
+                'description' => 'Transação efectuada com sucesso',
                 'type'        => 'success'
             ]);
         }
 
         return redirect()->back()->with([
             'title'       => 'Erro',
-            'description' => 'Erro ao efectuar recarga',
+            'description' => 'Erro ao efectuar transação',
             'type'        => 'danger'
         ]);
     }

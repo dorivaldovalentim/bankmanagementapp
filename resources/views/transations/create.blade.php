@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 <select name="reference" class="form-control">
-                    <option value="">Onde quer recarregar?</option>
+                    <option value="">Onde quer transacionar?</option>
                     <option value="0">Geral</option>
                     <option value="forme">Para Mim</option>
                     <option value="savings">Poupanças</option>

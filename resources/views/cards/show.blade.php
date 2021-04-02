@@ -27,15 +27,15 @@
                 <i class="fas fa-arrow-left"></i>
             </a>
             
-            <a href="{{ route('card.recharge', $card->id) }}" class="btn btn-success" data-toggle="tooltip" title="Recarregar">
+            <a href="{{ route('transation.create', $card->id) }}" class="btn btn-success" data-toggle="tooltip" title="Recarregar">
                 <i class="fas fa-plus"></i>
             </a>
             
-            <a href="{{ route('card.discharge', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Sacar">
+            <a href="{{ route('transation.create', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Sacar">
                 <i class="fas fa-minus"></i>
             </a>
             
-            <a href="{{ route('transations.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">
+            <a href="{{ route('transation.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">
                 <i class="fas fa-eye"></i>
             </a>
         </div>

@@ -32,10 +32,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', "CardController@create")->name('card.create');
         Route::post('/store', "CardController@store")->name('card.store');
         Route::get('/show/{id}', "CardController@show")->name('card.show');
-        Route::get('/recharge/{id}', "CardController@rechargeForm")->name('card.recharge');
-        Route::put('/recharge/{id}', "CardController@recharge")->name('card.recharge');
-        Route::get('/discharge/{id}', "CardController@dischargeForm")->name('card.discharge');
-        Route::put('/discharge/{id}', "CardController@discharge")->name('card.discharge');
     });
     
     /**
@@ -44,7 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'transations'], function () {
         Route::get('/', "TransationController@index")->name('transations.list');
-        Route::get('/show/{id}', "TransationController@show")->name('transations.show');
+        Route::get('/create/{id}', "TransationController@create")->name('transation.create');
+        Route::get('/store/{id}', "TransationController@store")->name('transation.store');
+        Route::get('/show/{id}', "TransationController@show")->name('transation.show');
     });
     
     /**

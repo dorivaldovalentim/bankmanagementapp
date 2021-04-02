@@ -15,7 +15,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 col-lg-4">
+        <a href="{{ route('cards.list') }}" class="col-md-6 col-lg-4">
             <div class="widget-small primary coloured-icon">
                 <i class="icon fa fa-credit-card fa-3x"></i>
 
@@ -24,7 +24,7 @@
                     <p><b>{{ $data['cards'] }}</b></p>
                 </div>
             </div>
-        </div>
+        </a>
 
         <div class="col-md-6 col-lg-4">
             <div class="widget-small info coloured-icon">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <a href="{{ route('needs.list') }}" class="col-md-6 col-lg-4">
             <div class="widget-small danger coloured-icon">
                 <i class="icon fa fa-money-bill-alt fa-3x"></i>
 
@@ -46,7 +46,7 @@
                     <p><b>{{ number_format($data['needs'], 2, ',', '.') }} KZs</b></p>
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 
 @endsection

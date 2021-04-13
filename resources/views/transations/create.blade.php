@@ -6,17 +6,17 @@
         <div>
             <h1>
                 <i class="fas fa-ad"></i>
-                Gestão de Cartões
+                Gestão de Transações
             </h1>
 
-            <p>A sua página de cartões</p>
+            <p>A sua página de transações</p>
         </div>
 
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
             <li class="breadcrumb-item"><a href="{{ route('home') }}">BankManagement</a></li>
             <li class="breadcrumb-item"><a href="{{ route('cards.list') }}">Cards</a></li>
-            <li class="breadcrumb-item"><a href="#">Recharge</a></li>
+            <li class="breadcrumb-item"><a href="#">New Transations</a></li>
         </ul>
     </div>
 
@@ -28,18 +28,24 @@
             </a>
         </div>
 
-        <form action="{{ route('card.recharge', $card->id) }}" method="POST" class="col-md-6">
+        <form action="{{ route('transation.store', $card->id) }}" method="POST" class="col-md-6">
             @csrf
-
-            @METHOD('put')
 
             <div class="form-group">
                 <input type="text" name="amount" placeholder="Valor em kzs" class="form-control" />
             </div>
 
             <div class="form-group">
+                <select name="type" class="form-control">
+                    <option value="">Tipo</option>
+                    <option value="I">Entrada</option>
+                    <option value="O">Saída</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <select name="reference" class="form-control">
-                    <option value="">Onde quer recarregar?</option>
+                    <option value="">Onde quer transacionar?</option>
                     <option value="0">Geral</option>
                     <option value="forme">Para Mim</option>
                     <option value="savings">Poupanças</option>
@@ -52,7 +58,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-success">Recarregar</button>
+                <button type="submit" class="btn btn-success">Salvar</button>
             </div>
         </form>
 

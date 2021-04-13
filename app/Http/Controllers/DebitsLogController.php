@@ -44,10 +44,15 @@ class DebitsLogController extends Controller
         $debits_log->debit_id = $id;
         $debits_log->user_id = auth()->user()->id;
         $debits_log->amount = $request->amount;
+        $debits_log->type = $request->type;
         $debits_log->description = $request->description;
 
         if ($debits_log->save()) {
-            $debit->amount += $request->amount;
+            if ($request->type == 'I') {
+                $debit->amount -= $request->amount;
+            } else {
+                $debit->amount += $request->amount;
+            }
     
             if ($debit->update()) {
                 return redirect()->back()->with([

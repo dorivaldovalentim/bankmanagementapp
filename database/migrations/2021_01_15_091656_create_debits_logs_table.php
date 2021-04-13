@@ -20,6 +20,7 @@ class CreateDebitsLogsTable extends Migration
             $table->unsignedBigInteger('debit_id');
             $table->foreign('debit_id')->references('id')->on('debits');
             $table->double('amount')->default(0);
+            $table->enum('type', ['I', 'O']);
             $table->text('description')->nullable();
             $table->timestamps();
         });

@@ -22,7 +22,7 @@ class CreateTransationsTable extends Migration
             $table->double('amount')->nullable();
             $table->double('before_transation')->nullable();
             $table->double('after_transation')->nullable();
-            $table->enum('where', ['Geral', 'Para mim', 'Poupanças', 'Despesas']);
+            $table->enum('where', ['Tudo', 'Geral', 'Para mim', 'Poupanças', 'Despesas']);
             $table->enum('type', ['I', 'O']);
             $table->text('description')->nullable();
             $table->timestamps();

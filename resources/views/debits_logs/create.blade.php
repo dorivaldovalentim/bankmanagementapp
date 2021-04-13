@@ -39,6 +39,14 @@
             </div>
 
             <div class="form-group">
+                <select name="type" class="form-control">
+                    <option value="">Tipo</option>
+                    <option value="O">Eu pagando</option>
+                    <option value="I">Eu recebendo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <textarea name="description" id="description" placeholder="Descrição" rows="10" class="form-control"></textarea>
             </div>
 

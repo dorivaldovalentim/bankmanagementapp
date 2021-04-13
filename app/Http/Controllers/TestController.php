@@ -14,10 +14,20 @@ class TestController extends Controller
 {
     public function index()
     {
-        return dd(
-            (new Debit)->find(1)->debits_logs()->get(),
-            (new DebitsLog)->find(1)->user,
-            (new DebitsLog)->find(1)->debit
-        );
+        $in = DebitsLog::whereType('I')->get();
+        $out = DebitsLog::whereType('O')->get();
+
+        foreach($in as $key) {
+            $key->type = 'O';
+            $key->save();
+        }
+
+        foreach($out as $key) {
+            $key->amount *= -1;
+            $key->type = 'I';
+            $key->save();
+        }
+
+        dd('Done 😉');
     }
 }

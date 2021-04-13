@@ -37,7 +37,13 @@
                             <tbody>
                                 @forelse($debits_logs as $debits_log)
                                     <tr>
-                                        <td>{{ number_format($debits_log->amount, 2, ',', '.') }} KZs</td>
+                                        <td>
+                                            <strong>
+                                                {!!
+                                                    $debits_log->type == 'I' ? '<span class="text-success">+ ' . number_format($debits_log->amount, 2, ',', '.') . ' KZs</span>' : '<span class="text-danger">- ' . number_format($debits_log->amount, 2, ',', '.') . ' KZs</span>'
+                                                !!}
+                                            </strong>
+                                        </td>
                                         <td>{{ $debits_log->description }}</td>
                                         <td>{{ $debits_log->created_at }}</td>
                                     </tr>

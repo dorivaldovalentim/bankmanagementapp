@@ -31,7 +31,6 @@
                                     <th>Cartão</th>
                                     <th>Montante</th>
                                     <th>Onde</th>
-                                    <th>Tipo</th>
                                     <th>Data</th>
                                     <th>Descrição</th>
                                 </tr>
@@ -41,15 +40,14 @@
                                 @forelse($transations as $transation)
                                     <tr>
                                         <td>{{ $transation->card->id }}</td>
-                                        <td>{{ number_format($transation->amount, 2, ',', '.') }} KZs</td>
-                                        <td>{{ $transation->where }}</td>
                                         <td>
                                             <strong>
                                                 {!!
-                                                    $transation->type == 'I' ? '<span class="text-success">Entrada</span>' : '<span class="text-danger">Saída</span>'
+                                                    $transation->type == 'I' ? '<span class="text-success">+ ' . number_format($transation->amount, 2, ',', '.') . ' KZs</span>' : '<span class="text-danger">- ' . number_format($transation->amount, 2, ',', '.') . ' KZs</span>'
                                                 !!}
                                             </strong>
                                         </td>
+                                        <td>{{ $transation->where }}</td>
                                         <td>{{ $transation->created_at }}</td>
                                         <td>{{ $transation->description }}</td>
                                     </tr>

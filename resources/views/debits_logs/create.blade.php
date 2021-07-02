@@ -41,8 +41,8 @@
             <div class="form-group">
                 <select name="type" class="form-control">
                     <option value="">Tipo</option>
-                    <option value="O">Eu pagando</option>
-                    <option value="I">Eu recebendo</option>
+                    <option value="O">Eu pagando / emprestando</option>
+                    <option value="I">Eu recebendo / pedindo emprestado</option>
                 </select>
             </div>
 

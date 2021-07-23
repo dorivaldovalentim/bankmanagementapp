@@ -45,7 +45,7 @@
                     </p>
 
                     <p class="card-text">
-                        <strong>Estado: {!! $need->status ? '<span class="text-success">não te preocupes 😉</span>' : '<span class="text-danger">corre! 😅</span>' !!}</strong>
+                        <strong>Estado: {!! $need->status ? '<span class="text-success">Concluída 😉</span>' : '<span class="text-danger">Não concluída 😔</span>' !!}</strong>
                     </p>
 
                     <p class="card-text">

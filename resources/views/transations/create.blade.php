@@ -27,6 +27,50 @@
                 <i class="fas fa-arrow-left"></i>
             </a>
         </div>
+        
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small primary coloured-icon">
+                <i class="icon fa fa-money-bill-wave fa-3x"></i>
+    
+                <div class="info">
+                    <h4>Na conta</h4>
+                    <p><b>{{ number_format($card->amount, 2, ',', '.') }} KZs</b></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small info coloured-icon">
+                <i class="icon fa fa-user fa-3x"></i>
+    
+                <div class="info">
+                    <h4>Para mim</h4>
+                    <p><b>{{ number_format($card->forme, 2, ',', '.') }} KZs</b></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small warning coloured-icon">
+                <i class="icon fa fa-box fa-3x"></i>
+    
+                <div class="info">
+                    <h4>Poupanças</h4>
+                    <p><b>{{ number_format($card->savings, 2, ',', '.') }} KZs</b></p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-6 col-lg-3">
+            <div class="widget-small danger coloured-icon">
+                <i class="icon fa fa-trash fa-3x"></i>
+    
+                <div class="info">
+                    <h4>Despesas</h4>
+                    <p><b>{{ number_format($card->expenses, 2, ',', '.') }} KZs</b></p>
+                </div>
+            </div>
+        </div>
 
         <form action="{{ route('transation.store', $card->id) }}" method="POST" class="col-md-6">
             @csrf

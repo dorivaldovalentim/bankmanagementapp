@@ -14,7 +14,7 @@ class NeedController extends Controller
      */
     public function index()
     {
-        $needs = auth()->user()->needs()->get();
+        $needs = auth()->user()->needs()->orderBy('need')->get();
         return view('needs.index', compact('needs'));
     }
 

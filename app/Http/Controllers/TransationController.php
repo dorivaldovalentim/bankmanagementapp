@@ -217,4 +217,16 @@ class TransationController extends Controller
     {
         //
     }
+
+    public function search(Request $request, $id = null)
+    {
+        $transations = 
+            auth()
+                ->user()
+                ->transations()
+                ->orderByDesc('created_at')
+                ->whereBetween('created_at', [$request->begins_at, $request->ends_at])
+                ->paginate(100);
+        return view('transations.index', compact('transations'));
+    }
 }

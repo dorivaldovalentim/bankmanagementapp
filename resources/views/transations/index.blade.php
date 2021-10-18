@@ -29,6 +29,20 @@
                 <form action="{{ route('transations.search') }}" method="GET">
                     <div class="d-flex">
                         <div class="form-group mx-1 text-center">
+                            <input type="search" class="form-control" name="description" value="{{ isset($_GET['description']) ? $_GET['description'] : '' }}" placeholder="Descrição" />
+                            <small class="text-secondary">Descrição</small>
+                        </div>
+
+                        <div class="form-group mx-1 text-center">
+                            <select name="type" class="form-control">
+                                <option value="">Tipo</option>
+                                <option value="I" {{ isset($_GET['type']) && $_GET['type'] == 'I' ? 'selected' : '' }}>Entrada</option>
+                                <option value="O" {{ isset($_GET['type']) && $_GET['type'] == 'O' ? 'selected' : '' }}>Saída</option>
+                            </select>
+                            <small class="text-secondary">Tipo de transação</small>
+                        </div>
+
+                        <div class="form-group mx-1 text-center">
                             <select name="reference" class="form-control">
                                 <option value="">Consultar transações de?</option>
                                 <option value="Geral" {{ isset($_GET['reference']) && $_GET['reference'] == 'Geral' ? 'selected' : '' }}>Geral</option>

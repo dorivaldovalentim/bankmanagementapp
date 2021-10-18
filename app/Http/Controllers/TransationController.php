@@ -220,14 +220,22 @@ class TransationController extends Controller
 
     public function search(Request $request, $id = null)
     {
-        $transations = 
-            auth()
-                ->user()
-                ->transations()
-                ->where('where', $request->reference)
-                ->whereBetween('created_at', [$request->begins_at, $request->ends_at])
-                ->orderByDesc('created_at')
-                ->paginate(100);
+        $transations = auth()->user()->transations();
+
+        
+        if ($request->begins_at > $request->ends_at)
+        $transations = $transations->whereBetween('created_at', [$request->ends_at, $request->begins_at]);
+        else
+        $transations = $transations->whereBetween('created_at', [$request->begins_at, $request->ends_at]);
+        
+        if ($request->description)
+        $transations = $transations->where('description', 'LIKE', '%' . $request->description . '%');
+        if ($request->reference)
+            $transations = $transations->whereWhere($request->reference);
+        if ($request->type)
+            $transations = $transations->whereType($request->type);
+
+        $transations = $transations->orderByDesc('created_at')->paginate(100);
         return view('transations.index', compact('transations'));
     }
 }

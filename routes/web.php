@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/create/{id}', "TransationController@create")->name('transation.create');
         Route::post('/store/{id}', "TransationController@store")->name('transation.store');
         Route::get('/show/{id}', "TransationController@show")->name('transation.show');
+        Route::get('/search/{id?}', "TransationController@search")->name('transations.search');
     });
     
     /**

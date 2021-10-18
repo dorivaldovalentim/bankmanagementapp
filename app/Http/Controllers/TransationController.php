@@ -224,8 +224,9 @@ class TransationController extends Controller
             auth()
                 ->user()
                 ->transations()
-                ->orderByDesc('created_at')
+                ->where('where', $request->reference)
                 ->whereBetween('created_at', [$request->begins_at, $request->ends_at])
+                ->orderByDesc('created_at')
                 ->paginate(100);
         return view('transations.index', compact('transations'));
     }

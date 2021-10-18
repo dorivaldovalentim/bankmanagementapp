@@ -29,12 +29,23 @@
                 <form action="{{ route('transations.search') }}" method="GET">
                     <div class="d-flex">
                         <div class="form-group mx-1 text-center">
-                            <input type="date" class="form-control" name="begins_at" />
+                            <select name="reference" class="form-control">
+                                <option value="">Consultar transações de?</option>
+                                <option value="Geral" {{ isset($_GET['reference']) && $_GET['reference'] == 'Geral' ? 'selected' : '' }}>Geral</option>
+                                <option value="Para mim" {{ isset($_GET['reference']) && $_GET['reference'] == 'Para mim' ? 'selected' : '' }}>Para Mim</option>
+                                <option value="Poupanças" {{ isset($_GET['reference']) && $_GET['reference'] == 'Poupanças' ? 'selected' : '' }}>Poupanças</option>
+                                <option value="Despesas" {{ isset($_GET['reference']) && $_GET['reference'] == 'Despesas' ? 'selected' : '' }}>Despesas</option>
+                            </select>
+                            <small class="text-secondary">Onde?</small>
+                        </div>
+
+                        <div class="form-group mx-1 text-center">
+                            <input type="date" class="form-control" name="begins_at" value="{{ isset($_GET['begins_at']) ? $_GET['begins_at'] : '' }}" />
                             <small class="text-secondary">Data inicial</small>
                         </div>
 
                         <div class="form-group mx-1 text-center">
-                            <input type="date" class="form-control" name="ends_at" />
+                            <input type="date" class="form-control" name="ends_at" value="{{ isset($_GET['ends_at']) ? $_GET['ends_at'] : '' }}" />
                             <small class="text-secondary">Data final</small>
                         </div>
 

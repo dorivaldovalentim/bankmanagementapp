@@ -19,6 +19,33 @@
     <div class="container">
 
         <div class="col-md-12">
+            <div class="d-flex justify-content-between">
+                <div class="mb-3">
+                    <a href="{{ route('cards.list') }}" class="btn btn-danger" data-toggle="tooltip" title="Voltar">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <form action="{{ route('transations.search') }}" method="GET">
+                    <div class="d-flex">
+                        <div class="form-group mx-1 text-center">
+                            <input type="date" class="form-control" name="begins_at" />
+                            <small class="text-secondary">Data inicial</small>
+                        </div>
+
+                        <div class="form-group mx-1 text-center">
+                            <input type="date" class="form-control" name="ends_at" />
+                            <small class="text-secondary">Data final</small>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success ml-1">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         
             <div class="card">
                 

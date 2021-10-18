@@ -180,8 +180,9 @@ class TransationController extends Controller
      */
     public function show($id)
     {
+        $card = Card::findOrFail($id);
         $transations = auth()->user()->transations()->whereCardId($id)->orderByDesc('created_at')->paginate(100);
-        return view('transations.show', compact('transations'));
+        return view('transations.show', compact('transations', 'card'));
     }
 
     /**

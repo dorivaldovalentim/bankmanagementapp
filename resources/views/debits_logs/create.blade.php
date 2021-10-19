@@ -28,7 +28,13 @@
                 <i class="fas fa-arrow-left"></i>
             </a>
 
-            <h3 class="text-danger mt-2">{{ $debit->name }}</h3>
+            <h3 class="text-danger mt-2">
+                {{ $debit->name }}
+                <small class="text-secondary">
+                    Dívida: 
+                    {!! $debit->type == 'I' ? '<span class="text-success">+' . number_format($debit->amount, 2, ',', '.') . ' KZs</span>' : '<span class="text-danger">-' . number_format($debit->amount, 2, ',', '.') . ' KZs</span>' !!}
+                </small>
+            </h3>
         </div>
 
         <form action="{{ route('debits_log.store', $debit->id) }}" method="POST" class="col-md-6">
@@ -47,7 +53,8 @@
             </div>
 
             <div class="form-group">
-                <textarea name="description" id="description" placeholder="Descrição" rows="10" class="form-control"></textarea>
+                <textarea name="description" id="description" placeholder="Descrição" rows="10"
+                    class="form-control"></textarea>
             </div>
 
             <div class="form-group">
@@ -55,7 +62,7 @@
             </div>
         </form>
 
-        @if(session('title'))
+        @if (session('title'))
             <div class="col-md-6">
                 <div class="alert alert-{{ session('type') }} alert-dismissible fade show" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

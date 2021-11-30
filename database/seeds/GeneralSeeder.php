@@ -406,7 +406,7 @@ class GeneralSeeder extends Seeder
 
         /** DebitLog */
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 1,
             'user_id' => 1,
             'debit_id' => 1,
@@ -417,7 +417,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:09'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 2,
             'user_id' => 1,
             'debit_id' => 2,
@@ -428,7 +428,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:09'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 3,
             'user_id' => 1,
             'debit_id' => 2,
@@ -439,7 +439,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 4,
             'user_id' => 1,
             'debit_id' => 3,
@@ -450,7 +450,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:09'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 5,
             'user_id' => 1,
             'debit_id' => 4,
@@ -461,7 +461,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:09'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 6,
             'user_id' => 1,
             'debit_id' => 3,
@@ -472,7 +472,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 7,
             'user_id' => 1,
             'debit_id' => 3,
@@ -483,7 +483,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 8,
             'user_id' => 1,
             'debit_id' => 3,
@@ -494,7 +494,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 9,
             'user_id' => 1,
             'debit_id' => 5,
@@ -505,7 +505,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 10,
             'user_id' => 1,
             'debit_id' => 5,
@@ -516,7 +516,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 11,
             'user_id' => 1,
             'debit_id' => 8,
@@ -527,7 +527,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 12,
             'user_id' => 1,
             'debit_id' => 10,
@@ -538,7 +538,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 13,
             'user_id' => 1,
             'debit_id' => 3,
@@ -549,7 +549,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 14,
             'user_id' => 1,
             'debit_id' => 3,
@@ -560,7 +560,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 15,
             'user_id' => 1,
             'debit_id' => 3,
@@ -571,7 +571,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 16,
             'user_id' => 1,
             'debit_id' => 3,
@@ -582,7 +582,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 17,
             'user_id' => 1,
             'debit_id' => 3,
@@ -593,7 +593,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 18,
             'user_id' => 1,
             'debit_id' => 3,
@@ -604,7 +604,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 19,
             'user_id' => 1,
             'debit_id' => 3,
@@ -615,7 +615,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 20,
             'user_id' => 1,
             'debit_id' => 3,
@@ -626,7 +626,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 21,
             'user_id' => 1,
             'debit_id' => 6,
@@ -637,7 +637,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 22,
             'user_id' => 1,
             'debit_id' => 7,
@@ -648,7 +648,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 23,
             'user_id' => 1,
             'debit_id' => 7,
@@ -659,7 +659,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 24,
             'user_id' => 1,
             'debit_id' => 7,
@@ -670,7 +670,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 25,
             'user_id' => 1,
             'debit_id' => 7,
@@ -681,7 +681,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 26,
             'user_id' => 1,
             'debit_id' => 7,
@@ -692,7 +692,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 27,
             'user_id' => 1,
             'debit_id' => 3,
@@ -703,7 +703,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 28,
             'user_id' => 1,
             'debit_id' => 11,
@@ -714,7 +714,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 29,
             'user_id' => 1,
             'debit_id' => 11,
@@ -725,7 +725,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 30,
             'user_id' => 1,
             'debit_id' => 9,
@@ -736,7 +736,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 31,
             'user_id' => 1,
             'debit_id' => 12,
@@ -747,7 +747,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 32,
             'user_id' => 1,
             'debit_id' => 9,
@@ -758,7 +758,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 33,
             'user_id' => 1,
             'debit_id' => 8,
@@ -769,7 +769,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 34,
             'user_id' => 1,
             'debit_id' => 8,
@@ -780,7 +780,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 35,
             'user_id' => 1,
             'debit_id' => 9,
@@ -791,7 +791,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 36,
             'user_id' => 1,
             'debit_id' => 9,
@@ -802,7 +802,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 37,
             'user_id' => 1,
             'debit_id' => 10,
@@ -813,7 +813,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 38,
             'user_id' => 1,
             'debit_id' => 13,
@@ -824,7 +824,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 39,
             'user_id' => 1,
             'debit_id' => 13,
@@ -835,7 +835,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 40,
             'user_id' => 1,
             'debit_id' => 7,
@@ -846,7 +846,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 41,
             'user_id' => 1,
             'debit_id' => 14,
@@ -857,7 +857,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 42,
             'user_id' => 1,
             'debit_id' => 9,
@@ -868,7 +868,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 43,
             'user_id' => 1,
             'debit_id' => 15,
@@ -879,7 +879,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 44,
             'user_id' => 1,
             'debit_id' => 15,
@@ -890,7 +890,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 45,
             'user_id' => 1,
             'debit_id' => 15,
@@ -901,7 +901,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 46,
             'user_id' => 1,
             'debit_id' => 12,
@@ -912,7 +912,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:10'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 47,
             'user_id' => 1,
             'debit_id' => 16,
@@ -923,7 +923,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 48,
             'user_id' => 1,
             'debit_id' => 9,
@@ -934,7 +934,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 49,
             'user_id' => 1,
             'debit_id' => 9,
@@ -945,7 +945,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 50,
             'user_id' => 1,
             'debit_id' => 9,
@@ -956,7 +956,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 51,
             'user_id' => 1,
             'debit_id' => 9,
@@ -967,7 +967,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 52,
             'user_id' => 1,
             'debit_id' => 17,
@@ -978,7 +978,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 53,
             'user_id' => 1,
             'debit_id' => 3,
@@ -989,7 +989,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 54,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1000,7 +1000,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 55,
             'user_id' => 1,
             'debit_id' => 17,
@@ -1011,7 +1011,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 56,
             'user_id' => 1,
             'debit_id' => 15,
@@ -1022,7 +1022,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 57,
             'user_id' => 1,
             'debit_id' => 1,
@@ -1033,7 +1033,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 58,
             'user_id' => 1,
             'debit_id' => 17,
@@ -1044,7 +1044,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 59,
             'user_id' => 1,
             'debit_id' => 18,
@@ -1055,7 +1055,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 60,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1066,7 +1066,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 61,
             'user_id' => 1,
             'debit_id' => 18,
@@ -1077,7 +1077,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 62,
             'user_id' => 1,
             'debit_id' => 18,
@@ -1088,7 +1088,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 63,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1099,7 +1099,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 64,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1110,7 +1110,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 65,
             'user_id' => 1,
             'debit_id' => 15,
@@ -1121,7 +1121,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 66,
             'user_id' => 1,
             'debit_id' => 19,
@@ -1132,7 +1132,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 67,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1143,7 +1143,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 68,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1154,7 +1154,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:12'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 69,
             'user_id' => 1,
             'debit_id' => 1,
@@ -1165,7 +1165,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 70,
             'user_id' => 1,
             'debit_id' => 4,
@@ -1176,7 +1176,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:30:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 71,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1187,7 +1187,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:44:34'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 72,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1198,7 +1198,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-13 21:45:47'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 73,
             'user_id' => 1,
             'debit_id' => 20,
@@ -1209,7 +1209,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-19 12:57:11'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 74,
             'user_id' => 1,
             'debit_id' => 21,
@@ -1220,7 +1220,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:30:16'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 75,
             'user_id' => 1,
             'debit_id' => 21,
@@ -1231,7 +1231,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:30:40'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 76,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1242,7 +1242,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:34:32'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 77,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1253,7 +1253,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:34:59'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 78,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1264,7 +1264,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:35:21'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 79,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1275,7 +1275,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-23 06:35:42'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 80,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1286,7 +1286,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-25 21:01:49'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 81,
             'user_id' => 1,
             'debit_id' => 22,
@@ -1297,7 +1297,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-29 23:59:17'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 82,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1308,7 +1308,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-04-30 00:00:08'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 83,
             'user_id' => 1,
             'debit_id' => 21,
@@ -1319,7 +1319,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-02 22:07:44'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 84,
             'user_id' => 1,
             'debit_id' => 23,
@@ -1330,7 +1330,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-09 17:04:26'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 85,
             'user_id' => 1,
             'debit_id' => 24,
@@ -1341,7 +1341,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-13 04:43:15'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 86,
             'user_id' => 1,
             'debit_id' => 24,
@@ -1352,7 +1352,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-15 16:34:37'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 87,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1363,7 +1363,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-15 16:39:27'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 88,
             'user_id' => 1,
             'debit_id' => 21,
@@ -1374,7 +1374,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-16 07:03:36'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 89,
             'user_id' => 1,
             'debit_id' => 21,
@@ -1385,7 +1385,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-26 02:19:42'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 90,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1396,7 +1396,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-26 02:25:06'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 91,
             'user_id' => 1,
             'debit_id' => 17,
@@ -1407,7 +1407,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-26 02:25:37'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 92,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1418,7 +1418,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-29 04:57:48'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 93,
             'user_id' => 1,
             'debit_id' => 24,
@@ -1429,7 +1429,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-29 04:58:27'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 94,
             'user_id' => 1,
             'debit_id' => 8,
@@ -1440,7 +1440,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-05-29 04:59:00'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 95,
             'user_id' => 1,
             'debit_id' => 25,
@@ -1451,7 +1451,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-05 08:18:58'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 96,
             'user_id' => 1,
             'debit_id' => 25,
@@ -1462,7 +1462,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-05 08:19:22'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 97,
             'user_id' => 1,
             'debit_id' => 9,
@@ -1473,7 +1473,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-12 17:59:32'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 98,
             'user_id' => 1,
             'debit_id' => 25,
@@ -1484,7 +1484,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-12 18:03:20'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 99,
             'user_id' => 1,
             'debit_id' => 2,
@@ -1495,7 +1495,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-27 20:49:27'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 100,
             'user_id' => 1,
             'debit_id' => 22,
@@ -1506,7 +1506,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-27 21:40:39'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 101,
             'user_id' => 1,
             'debit_id' => 12,
@@ -1517,7 +1517,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-27 22:23:58'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 102,
             'user_id' => 1,
             'debit_id' => 26,
@@ -1528,7 +1528,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-06-27 22:24:19'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 103,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1539,7 +1539,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-02 20:40:29'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 104,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1550,7 +1550,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-02 20:42:04'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 105,
             'user_id' => 1,
             'debit_id' => 3,
@@ -1561,7 +1561,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-02 20:42:26'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 106,
             'user_id' => 1,
             'debit_id' => 24,
@@ -1572,7 +1572,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-02 21:16:54'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 107,
             'user_id' => 1,
             'debit_id' => 2,
@@ -1583,7 +1583,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-02 21:18:13'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 108,
             'user_id' => 1,
             'debit_id' => 26,
@@ -1594,7 +1594,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-08 22:14:30'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 109,
             'user_id' => 1,
             'debit_id' => 22,
@@ -1605,7 +1605,7 @@ class GeneralSeeder extends Seeder
             'updated_at' => '2021-07-08 22:15:15'
         ]);
 
-        (new App\Models\Debitslog())->create([
+        (new App\Models\DebitsLog())->create([
             'id' => 110,
             'user_id' => 1,
             'debit_id' => 3,

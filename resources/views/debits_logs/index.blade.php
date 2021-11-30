@@ -30,6 +30,8 @@
                                 <tr>
                                     <th>Montante</th>
                                     <th>Descriçao</th>
+                                    <th>Antes</th>
+                                    <th>Depois</th>
                                     <th>Data</th>
                                 </tr>
                             </thead>
@@ -45,6 +47,8 @@
                                             </strong>
                                         </td>
                                         <td>{{ $debits_log->description }}</td>
+                                        <td>{{ number_format($debits_log->before_transation, 2, ',', '.') }} KZs</td>
+                                        <td>{{ number_format($debits_log->after_transation, 2, ',', '.') }} KZs</td>
                                         <td>{{ $debits_log->created_at }}</td>
                                     </tr>
                                 @empty

@@ -81,7 +81,7 @@ class TransationController extends Controller
                     $card->forme += $request->amount * 0.3;
                     $card->savings += $request->amount * 0.3;
                 } elseif ($transation->type == 'O') {
-                    if ($card->amount < $request->amount) {
+                    if ($card_amount < $request->amount) {
                         return redirect()->back()->with([
                             'title'       => 'Aviso',
                             'description' => 'Só pode sacar até ' . number_format($card_amount, 2, ',', '.') . ' KZs',

@@ -34,6 +34,10 @@
             <a href="{{ route('transation.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">
                 <i class="fas fa-eye"></i>
             </a>
+            
+            <a href="{{ route('card.edit', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Editar cartão">
+                <i class="fas fa-edit"></i>
+            </a>
         </div>
 
         <div class="col-md-6 col-lg-3">

@@ -83,9 +83,11 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function edit(Card $card)
+    public function edit($id)
     {
-        //
+        $banks = (new Bank())->orderBy('name')->get();
+        $card = Card::findOrFail($id);
+        return view('cards.edit', compact('banks', 'card'));
     }
 
     /**

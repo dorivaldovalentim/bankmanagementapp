@@ -97,9 +97,27 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Card $card)
+    public function update(Request $request, $id)
     {
-        //
+        $card = auth()->user()->cards()->findOrFail($id);
+        $card->number = $request->number;
+        $card->iban = $request->iban;
+        $card->expires_at = $request->expires_at;
+        $card->bank_id = $request->bank_id;
+
+        if ($card->save()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Dados do cartão actualizados com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao actualizar os dados do cartão',
+            'type'        => 'danger'
+        ]);
     }
 
     /**

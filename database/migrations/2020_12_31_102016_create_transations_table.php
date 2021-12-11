@@ -18,7 +18,7 @@ class CreateTransationsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('card_id');
-            $table->foreign('card_id')->references('id')->on('cards');
+            $table->foreign('card_id')->references('id')->on('cards')->onDelete('cascade');
             $table->double('amount')->nullable();
             $table->double('before_transation')->nullable();
             $table->double('after_transation')->nullable();

@@ -126,8 +126,22 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Card $card)
+    public function destroy($id)
     {
-        //
+        $card = Card::findOrFail($id);
+
+        if ($card->delete()) {
+            return redirect()->route('cards.list')->with([
+                'title'       => 'Sucesso',
+                'description' => 'Cartão eliminado com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->route('cards.list')->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao eliminar cartão',
+            'type'        => 'danger'
+        ]);
     }
 }

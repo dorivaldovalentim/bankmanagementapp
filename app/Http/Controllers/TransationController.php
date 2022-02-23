@@ -224,11 +224,10 @@ class TransationController extends Controller
     {
         $transations = auth()->user()->transations();
 
-        if ($request->begins_at > $request->ends_at)
-            $transations = $transations->whereBetween('created_at', [$request->ends_at, $request->begins_at]);
-        else
-            $transations = $transations->whereBetween('created_at', [$request->begins_at, $request->ends_at]);
-        
+        if ($request->begins_at)
+            $transations = $transations->where('created_at', '>=', $request->begins_at);
+        if ($request->ends_at)
+            $transations = $transations->where('created_at', '<=', $request->ends_at);
         if ($request->description)
             $transations = $transations->where('description', 'LIKE', '%' . $request->description . '%');
         if ($request->reference)

@@ -76,7 +76,7 @@
             @csrf
 
             <div class="form-group">
-                <input type="text" name="amount" placeholder="Valor em kzs" class="form-control" />
+                <input type="text" name="amount" placeholder="Valor em kzs" class="form-control"  autofocus="autofocus" />
             </div>
 
             <div class="form-group">
@@ -99,6 +99,10 @@
 
             <div class="form-group">
                 <textarea name="description" id="description" placeholder="Descrição" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="datetime-local" name="created_at" placeholder="Data" class="form-control" data-toggle="tooltip" title="Deixe vazio para preencher com a data actual" />
             </div>
 
             <div class="form-group">

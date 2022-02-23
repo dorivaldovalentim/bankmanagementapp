@@ -32,7 +32,7 @@
             @csrf
 
             <div class="form-group">
-                <input type="text" name="name" placeholder="Nome" class="form-control" />
+                <input type="text" name="name" placeholder="Nome" class="form-control"  autofocus="autofocus" />
             </div>
 
             <div class="form-group">

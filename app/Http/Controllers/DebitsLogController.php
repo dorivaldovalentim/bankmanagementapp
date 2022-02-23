@@ -48,6 +48,7 @@ class DebitsLogController extends Controller
         $debits_log->description = $request->description;
         $debits_log->before_transation = $debit->amount;
         $debits_log->after_transation = $request->type == "I" ? $debit->amount - $request->amount : $debit->amount + $request->amount;
+        $debits_log->created_at = $request->created_at ?: now();
 
         if ($debits_log->save()) {
             if ($request->type == 'I') {

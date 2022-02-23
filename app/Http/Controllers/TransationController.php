@@ -46,6 +46,7 @@ class TransationController extends Controller
         $transation->type = $request->type;
         $transation->card_id = $id;
         $transation->amount = $request->amount;
+        $transation->created_at = $request->created_at ?: now();
         
         if ($transation->type == 'O' && $card->amount == $transation->amount) {
             $transation->before_transation = $card->amount;

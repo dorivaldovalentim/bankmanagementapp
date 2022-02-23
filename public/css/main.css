@@ -15984,7 +15984,7 @@ be a descendant of the grid when it is being dragged.
 
 .widget-small .info {
   flex: 1;
-  padding: 0 20px;
+  padding: 0 15px;
   align-self: center;
 }
 
@@ -15993,12 +15993,12 @@ be a descendant of the grid when it is being dragged.
   margin: 0;
   margin-bottom: 5px;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 .widget-small .info p {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .widget-small.primary {

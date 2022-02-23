@@ -26,6 +26,7 @@ class CreateCardsTable extends Migration
             $table->string('number');
             $table->string('iban');
             $table->date('expires_at');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -83,9 +83,11 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function edit(Card $card)
+    public function edit($id)
     {
-        //
+        $banks = (new Bank())->orderBy('name')->get();
+        $card = Card::findOrFail($id);
+        return view('cards.edit', compact('banks', 'card'));
     }
 
     /**
@@ -95,9 +97,27 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Card $card)
+    public function update(Request $request, $id)
     {
-        //
+        $card = auth()->user()->cards()->findOrFail($id);
+        $card->number = $request->number;
+        $card->iban = $request->iban;
+        $card->expires_at = $request->expires_at;
+        $card->bank_id = $request->bank_id;
+
+        if ($card->save()) {
+            return redirect()->back()->with([
+                'title'       => 'Sucesso',
+                'description' => 'Dados do cartão actualizados com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->back()->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao actualizar os dados do cartão',
+            'type'        => 'danger'
+        ]);
     }
 
     /**
@@ -106,8 +126,22 @@ class CardController extends Controller
      * @param  \App\Models\Card  $card
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Card $card)
+    public function destroy($id)
     {
-        //
+        $card = Card::findOrFail($id);
+
+        if ($card->delete()) {
+            return redirect()->route('cards.list')->with([
+                'title'       => 'Sucesso',
+                'description' => 'Cartão eliminado com sucesso',
+                'type'        => 'success'
+            ]);
+        }
+
+        return redirect()->route('cards.list')->with([
+            'title'       => 'Erro',
+            'description' => 'Erro ao eliminar cartão',
+            'type'        => 'danger'
+        ]);
     }
 }

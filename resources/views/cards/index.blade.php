@@ -30,6 +30,19 @@
             </a>
         </div>
 
+        @if(session('title'))
+            <div class="col-md-12">
+                <div class="alert alert-{{ session('type') }} alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+
+                    <strong>{{ session('title') }}!</strong> {{ session('description') }}
+                </div>
+            </div>
+        @endif
+
         @forelse ($cards as $card)
 
             <a href="{{ route('card.show', $card->id) }}" class="col-md-4 text-white">

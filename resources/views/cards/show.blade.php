@@ -34,6 +34,19 @@
             <a href="{{ route('transation.show', $card->id) }}" class="btn btn-primary" data-toggle="tooltip" title="Ver transações">
                 <i class="fas fa-eye"></i>
             </a>
+            
+            <a href="{{ route('card.edit', $card->id) }}" class="btn btn-info" data-toggle="tooltip" title="Editar cartão">
+                <i class="fas fa-edit"></i>
+            </a>
+            
+            <a href="#" class="btn btn-danger" data-toggle="tooltip" title="Eliminar cartão" onclick="if(confirm('Tem a certeza de que pretende eliminar este cartão?')) $('#destroy_card').submit()">
+                <i class="fas fa-trash"></i>
+            </a>
+
+            <form action="{{ route('card.destroy', $card->id) }}" method="post" id="destroy_card">
+                @METHOD('delete')
+                @csrf
+            </form>
         </div>
 
         <div class="col-md-6 col-lg-3">

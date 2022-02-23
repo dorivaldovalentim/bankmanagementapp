@@ -32,6 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/create', "CardController@create")->name('card.create');
         Route::post('/store', "CardController@store")->name('card.store');
         Route::get('/show/{id}', "CardController@show")->name('card.show');
+        Route::get('/edit/{id}', "CardController@edit")->name('card.edit');
+        Route::put('/update/{id}', "CardController@update")->name('card.update');
+        Route::delete('/destroy/{id}', "CardController@destroy")->name('card.destroy');
     });
     
     /**

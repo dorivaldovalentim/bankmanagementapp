@@ -25,6 +25,7 @@ class CreateTransationsTable extends Migration
             $table->enum('where', ['Tudo', 'Geral', 'Para mim', 'Poupanças', 'Despesas']);
             $table->enum('type', ['I', 'O']);
             $table->text('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

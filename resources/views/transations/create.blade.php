@@ -102,6 +102,10 @@
             </div>
 
             <div class="form-group">
+                <input type="datetime-local" name="created_at" placeholder="Data" class="form-control" data-toggle="tooltip" title="Deixe vazio para preencher com a data actual" />
+            </div>
+
+            <div class="form-group">
                 <button type="submit" class="btn btn-success">Salvar</button>
             </div>
         </form>

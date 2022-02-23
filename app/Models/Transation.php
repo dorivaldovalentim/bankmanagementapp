@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Transation extends Model
 {
+    use SoftDeletes;
 
     /** Relacionando transação com os usuários */
     

@@ -48,13 +48,6 @@
 
                         <ul class="dropdown-menu settings-menu dropdown-menu-right">
                             <li>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fa fa-user fa-lg"></i>
-                                    Perfil
-                                </a>
-                            </li>
-
-                            <li>
                                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); $('#logout-form').submit();">
                                     <i class="fa fa-sign-out-alt fa-lg"></i>
                                     Sair

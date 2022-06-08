@@ -12,10 +12,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        (new App\User())->create([
-            'name' => 'Dorivaldo Valentim',
-            'email' => 'dorivaldovalentim@gmail.com',
-            'password' => Hash::make('qwerty')
-        ]);
+        //
     }
 }

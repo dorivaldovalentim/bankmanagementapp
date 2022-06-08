@@ -16,8 +16,7 @@
         </ul>
     </div>
 
-    <div class="container">
-
+    <div class="container-fluid">
         <div class="col-md-12">
             <div class="d-flex justify-content-between">
                 <div class="mb-3">
@@ -73,9 +72,7 @@
             </div>
         
             <div class="card">
-                
                 <div class="card-body p-0">
-
                     <div class="table-responsive">
                         <table class="table table-condensed m-0 table-sm">
                             <thead>
@@ -111,17 +108,13 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
-                
             </div>
 
             <div class="d-flex justify-content-end mt-3">
                 {!! $transations->links() !!}
             </div>
-            
         </div>
-
     </div>
 
 @endsection

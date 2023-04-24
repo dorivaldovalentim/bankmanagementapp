@@ -15,7 +15,7 @@ class CreateDebitsTable extends Migration
     {
         Schema::create('debits', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name')/* ->unique() */;
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->double('amount')->default(0);
